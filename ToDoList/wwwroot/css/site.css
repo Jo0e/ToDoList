@@ -1,6 +1,11 @@
 html {
     font-size: 14px;
 }
+* {
+    font-family: 'Nunito', sans-serif;
+    font-weight:500;
+    
+}
 
 @media (min-width: 768px) {
     html {
@@ -20,68 +25,67 @@ html {
 body {
     margin-bottom: 60px;
 }
+
 .log-btn {
     display: inline-block;
     position: absolute;
-    right:75px;
-    top:85px;
+    right: 75px;
+    top: 85px;
+    color:darkslategray;
 }
 
 
 @media (max-width: 970px) {
     .log-btn {
-        
-        right: 110px; 
-        top: 90px; 
-        font-size: 14px; 
+        right: 110px;
+        top: 90px;
+        font-size: 14px;
     }
 }
 
 
 @media (max-width: 768px) {
     .log-btn {
-        right: 80px; 
-        top: 70px; 
-        font-size: 14px; 
+        right: 80px;
+        top: 70px;
+        font-size: 14px;
     }
 }
 
 /* For mobile phones */
 @media (max-width: 480px) {
     .log-btn {
-        right: 10px; 
-        top: 70px; 
-        font-size: 12px; 
+        right: 10px;
+        top: 70px;
+        font-size: 12px;
     }
 }
 
 
-.cont-log{
-    justify-content:flex-end;
-
-}
-a[data-tooltip] {
-    position: relative;
-    cursor: pointer;
+.cont-log {
+    justify-content: flex-end;
 }
 
-a[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #0D6efd;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s;
-}
 
-a[data-tooltip]:hover::after {
-    opacity: 1;
-    visibility: visible;
+.canvas-text {
+    font-family: 'Arial', sans-serif;
+    Clean, easy-to-read font color: #333;
+    Dark grey color for better contrast background-color: #f9f9f9;
+    Light background for better readability padding: 20px;
+    Add some padding for spacing border-radius: 8px;
+    Rounded corners for a modern look box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    Subtle shadow for depth
+        
+}
+    .canvas-text p {
+        font-size: 1em;  Standard font size for the paragraph 
+        line-height: 1.6;  Increase line height for readability 
+    }
+
+@import url("https://fonts.googleapis.com/css?family=Bevan");
+
+@media screen and (max-width: 880px) {
+    p {
+        font-size: 10vw;
+    }
 }

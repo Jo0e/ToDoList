@@ -14,13 +14,10 @@
         </div>
         <div>
             <label class="col-form-label " for="inputDefault">Deadline</label>
-            <input value="@Model.Deadline" type="datetime" class="form-control" name="Deadline" data-ms-editor="true" required>
-        </div>
-        <div>
-            <input value="@Model.File" type="file" class="form-control mt-4" name="File" id="inputGroupFile02" required>
+            <input value="@Model.Deadline.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" class="form-control" name="Deadline" data-ms-editor="true">
         </div>
         <input type="hidden" value="@Model.UserId" name="UserId" />
         <input type="hidden" value="@Model.Id" name="Id" />
-        <button type="submit" class="btn btn-success  mt-3 ps-md-4 pe-md-4" > Edit </button>
+        <button type="submit" class="btn btn-success  mt-4 ps-md-4 pe-md-4" > Edit </button>
     </div>
 </form>

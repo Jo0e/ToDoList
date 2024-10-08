@@ -1,10 +1,36 @@
 ﻿@model IEnumerable<ToDoItem>
+@section Scripts {
+    @if (TempData["CreateNew"] != null)
+    {
+        <script>
+            toastr.info('@TempData["CreateNew"]', 'New To Do!')
+        </script>
+    }
+}
 <div class="cont-log">
-<h3>Welcome, @ViewBag.userData.Name ! </h3>
-<p>Here is your to-do list.</p>
-<a class="log-btn btn btn-primary" >Logout</a>
+    <h3>Welcome, @ViewBag.userName ! </h3>
+    <p>Here is your to-do list.</p>
+
+    @* just the code of the canvas for the logout button *@
+    <button class="btn btn-secondary log-btn" type="button" style="color:white; font-weight:530;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-door-open-fill"></i> Logout</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="canvas-text">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Log out from To-DO list</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <hr />
+            <div class="offcanvas-body">
+                <p>Are you sure want to logout.<br /> <strong style="color:orangered">You will lose all your data</strong>.</p>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+                <a href="/ToDoItems/LogOut?id=@ViewBag.userId" style="display:inline-block; margin-left:3px" class="btn btn-outline-danger">Logout</a>
+            </div>
+        </div>
+    </div>
 </div>
-<a class="btn btn-primary mt-2" style="display:inline-block," href="/ToDoItems/CreateNew?id=@ViewBag.userData.Id">Create New</a>
+<a class="btn btn-primary mt-2" style="display:inline-block," href="/ToDoItems/CreateNew?id=@ViewBag.userId">Create New</a>
+
 @* ------------Table------------- *@
 <table class="table table-secondary table-hover mt-3">
     <tr class="text-center border-bottom-0 ">
@@ -22,15 +48,17 @@
             <td>@item.Description</td>
             <td>@item.Deadline</td>
             <td>
-                <a data-tooltip="@item.File" class="btn btn-secondary">
-                <i class="bi bi-download" style="margin-right:10px"></i> Download File</a></td>
+                <a href="/ToDoItems/DownloadFile?id=@item.Id" class="btn btn-dark">
+                    <i class="bi bi-download" style="margin-right:10px"></i> Download File
+                </a>
+            </td>
             <td>
-                <a href="/ToDoItems/Edit?id=@item.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i> Edit </a>
+                <a href="/ToDoItems/Edit?id=@item.Id" class="btn btn-info"><i class="bi bi-pencil-square"></i> Edit </a>
                 <button name="itemId" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-itemid="@item.Id"><i class="bi bi-trash"></i> Delete</button>
             </td>
         </tr>
     }
-    
+
 </table>
 
 
