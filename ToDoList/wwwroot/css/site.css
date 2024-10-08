@@ -1,22 +1,87 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+.log-btn {
+    display: inline-block;
+    position: absolute;
+    right:75px;
+    top:85px;
+}
+
+
+@media (max-width: 970px) {
+    .log-btn {
+        
+        right: 110px; 
+        top: 90px; 
+        font-size: 14px; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .log-btn {
+        right: 80px; 
+        top: 70px; 
+        font-size: 14px; 
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .log-btn {
+        right: 10px; 
+        top: 70px; 
+        font-size: 12px; 
+    }
+}
+
+
+.cont-log{
+    justify-content:flex-end;
+
+}
+a[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0D6efd;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+a[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
 }

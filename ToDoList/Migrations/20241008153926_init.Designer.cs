@@ -12,7 +12,7 @@ using ToDoList.Data;
 namespace ToDoList.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241005113501_init")]
+    [Migration("20241008153926_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -41,7 +41,6 @@ namespace ToDoList.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("File")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

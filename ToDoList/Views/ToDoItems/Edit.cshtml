@@ -1,0 +1,26 @@
+﻿@model ToDoItem
+<h3><a href="/ToDoItems/Items"><i class="bi bi-arrow-left"></i></a> Edit Item</h3>
+<hr />
+<form action="/ToDoItems/Edit" method="post">
+    <div class="col-5 my-lg-3">
+
+        <div>
+            <label class="col-form-label" for="inputDefault">Name</label>
+            <input value="@Model.Name" type="text" class="form-control" id="inputDefault" name="Name" spellcheck="false" data-ms-editor="true" required>
+        </div>
+        <div>
+            <label class="col-form-label " for="inputDefault">Description</label>
+            <input value="@Model.Description" type="text" class="form-control" id="inputDefault" name="Description" spellcheck="false" data-ms-editor="true" required>
+        </div>
+        <div>
+            <label class="col-form-label " for="inputDefault">Deadline</label>
+            <input value="@Model.Deadline" type="datetime" class="form-control" name="Deadline" data-ms-editor="true" required>
+        </div>
+        <div>
+            <input value="@Model.File" type="file" class="form-control mt-4" name="File" id="inputGroupFile02" required>
+        </div>
+        <input type="hidden" value="@Model.UserId" name="UserId" />
+        <input type="hidden" value="@Model.Id" name="Id" />
+        <button type="submit" class="btn btn-success  mt-3 ps-md-4 pe-md-4" > Edit </button>
+    </div>
+</form>

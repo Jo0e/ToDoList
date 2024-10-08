@@ -1,25 +1,26 @@
-﻿<h3>Create New</h3>
+﻿
+<h3><a href="/ToDoItems/Items"><i class="bi bi-arrow-left"></i></a> Create New</h3>
 <h6>List Item</h6>
 <hr />
-<form action="" method="">
+<form action="/ToDoItems/CreateNew" method="post">
     <div class="col-5 my-lg-3">
 
         <div>
             <label class="col-form-label" for="inputDefault">Name</label>
-            <input type="text" class="form-control" id="inputDefault" spellcheck="false" data-ms-editor="true">
+            <input type="text" class="form-control" id="inputDefault" name="Name" spellcheck="false" data-ms-editor="true" required>
         </div>
         <div>
             <label class="col-form-label " for="inputDefault">Description</label>
-            <input type="text" class="form-control" id="inputDefault" spellcheck="false" data-ms-editor="true">
+            <input type="text" class="form-control" id="inputDefault" name="Description" spellcheck="false" data-ms-editor="true" required>
         </div>
         <div>
             <label class="col-form-label " for="inputDefault">Deadline</label>
-            <input type="datetime-local" class="form-control" data-ms-editor="true">
+            <input type="datetime-local" class="form-control" name="Deadline" data-ms-editor="true" required>
         </div>
         <div>
-            <input type="file" class="form-control mt-4" id="inputGroupFile02">
+            <input type="file" class="form-control mt-4" name="File" id="inputGroupFile02" required>
         </div>
-
+        <input type="hidden" value="@Model" name="UserId" />
+    <button type="submit" class="btn btn-info btn-dark mt-2">Create</button>
     </div>
-    <button type="button" class="btn btn-info btn-dark mt-2">Create</button>
 </form>

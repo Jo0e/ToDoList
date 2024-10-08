@@ -38,7 +38,6 @@ namespace ToDoList.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("File")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
